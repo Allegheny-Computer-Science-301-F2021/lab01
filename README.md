@@ -36,5 +36,38 @@ In this class we will use GitHub for all course materials and most of the assign
 
  - Do not use a word processor such as Google Docs, Word or Libreoffice for your writing. Instead, please write in a text file using the Markdown styling syntax.
 
+
 ## GitHub and Markdown
  If you have not done so already, please read all of the relevant [GitHub Guides](https://guides.github.com/) that explain how to use many of the features that GitHub provides. In particular, please make sure that you have read the following GitHub guides: [Mastering Markdown](https://guides.github.com/features/mastering-markdown/), [Hello World](https://guides.github.com/activities/hello-world/), and [Documenting Your Projects on GitHub](https://guides.github.com/features/wikis/). Each of these guides will help you to understand how to use both [GitHub](http://github.com) and [GitHub Classroom](https://classroom.github.com/).
+
+
+ ### Running GatorGrader Locally
+
+ To run GatorGrader locally to see if your solution satisfies minimal writing requirements of the lab,
+ once you have installed [Docker Desktop](https://www.docker.com/products/docker-desktop),
+ you can use the following `docker run` command to start `gradle grade` as a containerized application, using the [DockaGator](https://github.com/GatorEducator/dockagator) Docker image available on [DockerHub](https://cloud.docker.com/u/gatoreducator/repository/docker/gatoreducator/dockagator).
+
+### Mac:
+
+ ```bash
+ docker run --rm --name dockagator \
+   -v "$(pwd)":/project \
+   -v "$HOME/.dockagator":/root/.local/share \
+   gatoreducator/dockagator
+ ```
+
+### Linux:
+```
+sudo docker run --rm --name dockagator \
+	-v "$(pwd)":/project \
+	-v "$HOME/.dockagator":/root/.local/share \
+	gatoreducator/dockagator
+```
+
+ The command above will use `"$(pwd)"` (i.e., the current directory) as the project directory and `"$HOME/.dockagator"` as the cached GatorGrader directory. Please note that both of these directories must exist, although only the project directory must contain something. Generally, the project directory should contain the source code and technical writing of this assignment, as provided to a student through GitHub. Additionally, the cache directory should not contain anything other than directories and programs created by DockaGator, thus ensuring that they are not otherwise overwritten during the completion of the assignment. To ensure that the previous command will work correctly, you should create the cache directory by running the command `mkdir $HOME/.dockagator`.
+
+ If you are running your program on a Windows Operating System, you should run the following command instead, replacing the word "user" with the username of your machine:
+
+ ```bash
+ docker run --rm --name dockagator -v "%cd%":/project -v "C:\Users\user/.dockagator":/root/.local/share gatoreducator/dockagator
+ ```
