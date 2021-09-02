@@ -16,7 +16,7 @@ Note: As you complete each of the following, please remove the `todo` tags.
 
 1. **Article 1**
 	- Citation or reference
-`TODO`
+https://www.wired.com/story/palantirs-gods-eye-view-of-afghanistan/
 	- Brief summary
 `TODO`
 	- A benefit of the technology
@@ -27,7 +27,7 @@ Note: As you complete each of the following, please remove the `todo` tags.
 
 2. **Article 2**
 - Citation or reference
-`TODO`
+https://www.nytimes.com/interactive/2020/10/21/magazine/palantir-alex-karp.html
 - Brief summary
 `TODO`
 - A benefit of the technology
